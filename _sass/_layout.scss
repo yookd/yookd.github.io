@@ -1,3 +1,8 @@
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+
 /**
  * Site header
  */
@@ -97,9 +102,35 @@
 /**
  * Site footer
  */
+
+.logo {
+  width: 150px;
+  height: 150px;
+  background-image: url('/assets//images/dyoo.png');
+  text-indent: -9999px;
+}
+
+@media
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .logo {
+    background-size: 150px 150px;
+    background-image: url('/assets//images/dyoo@2x.png');
+    text-indent: -9999px;
+  }
+}
 .site-footer {
     border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
+    position: relative;
+    height: 100%;
+
+    .wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .footer-heading {
@@ -111,6 +142,16 @@
 .social-media-list {
     list-style: none;
     margin-left: 0;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      margin-right: 15px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
 }
 
 .footer-col-wrapper {
